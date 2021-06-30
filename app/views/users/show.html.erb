@@ -1,0 +1,31 @@
+    <h3>プロフィール詳細</h3>
+ 
+    <table>
+      <tr>
+        <th>メールアドレス</th>
+        <td><%= @user.email %></td>
+      </tr>
+      <tr>
+        <th>パスワード</th>
+        <td>********(セキュリティのため非表示)</td>
+      </tr>
+      <tr>
+        <th>アイコン</th>
+        <td><img src=<%= @user.icon_image %> class = "icon_image"></td>
+      </tr>
+      <tr>
+        <th>名前</th>
+        <td><%= @user.profile_name %></td>
+      </tr>
+      <tr>
+        <th>自己紹介</th>
+        <td><%= @user.self_introduction %></td>
+      </tr>
+    </table>
+ 
+    <div>
+      <ul>
+        <li><%= link_to "トップ画面に戻る", :rooms %></li>
+      </ul>
+      
+    </div>
