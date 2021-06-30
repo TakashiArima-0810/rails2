@@ -18,9 +18,9 @@
       <tbody>
         <% @reservations .each do |reservation| %>
           <tr>
-            <%#<td><% if reservation.room.room_image? %>
-            <%#<%= image_tag reservations.room.room_image.url %>
-            <%#<% end %></td>
+            <td><% if reservation.room.room_image? %>
+            <%= image_tag reservation.room.room_image.url %>
+            <% end %></td>
             <td><%= reservation.room.room_name %></td>
             <td><%= reservation.room.room_introduction %></td>
             <td><%= reservation.start_date %></td>
