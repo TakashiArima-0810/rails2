@@ -1,0 +1,37 @@
+<h3>登録ルーム一覧</h3>
+
+<% if flash.notice %>
+    <p class="notice"></p><%= flash.notice %></p>
+<% end %>
+
+<table>
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>ルーム名</th>
+            <th>ルーム紹介</th>
+            <th>料金</th>
+            <th>住所</th>
+            <th>ルーム画像</th>
+            <th>参照</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <% @rooms.each do |room| %>
+        <tr>
+            <td><%= room.id %></td>
+            <td><%= room.room_name %></td>
+            <td><%= room.room_introduction %></td>
+            <td><%= room.room_price %></td>
+            <td><%= room.room_address %></td>
+            <td><% if room.room_image? %>
+            <%= image_tag room.room_image.url %>
+            <% end %></td>
+            <td><%= link_to "ルーム予約画面", room %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<p><%= link_to "ルーム新規登録",:new_room %></p>
